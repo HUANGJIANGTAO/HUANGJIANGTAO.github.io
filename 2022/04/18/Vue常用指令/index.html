@@ -20,23 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄江涛的个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="常用指令什么是指令?指令就是Vue内部提供的一些自定义属性,这些属性中封装好了Vue内部实现的一些功能只要使用这些指令就可以使用Vue中实现的这些功能 v-once指令1让界面不要跟着数据变化, 只渲染一次 v-cloak指令作用12345678910111213数据渲染之后自动显示元素1.Vue数据绑定过程1.1会先将未绑定数据的界面展示给用户1.2然后再根据模型中的数据和控制的区域生成绑定数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue">
+<meta property="og:url" content="http://example.com/2022/04/18/Vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="黄江涛的个人博客">
+<meta property="og:description" content="常用指令什么是指令?指令就是Vue内部提供的一些自定义属性,这些属性中封装好了Vue内部实现的一些功能只要使用这些指令就可以使用Vue中实现的这些功能 v-once指令1让界面不要跟着数据变化, 只渲染一次 v-cloak指令作用12345678910111213数据渲染之后自动显示元素1.Vue数据绑定过程1.1会先将未绑定数据的界面展示给用户1.2然后再根据模型中的数据和控制的区域生成绑定数据">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-04-18T06:06:47.860Z">
+<meta property="article:modified_time" content="2022-04-18T06:54:09.084Z">
 <meta property="article:author" content="黄江涛">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/04/18/Vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh","comments":true,"permalink":"http://example.com/2022/04/18/Vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/","path":"2022/04/18/Vue常用指令/","title":"Vue"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>黄江涛的个人博客</title>
+<title>Vue | 黄江涛的个人博客</title>
   
 
 
@@ -62,7 +66,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">黄江涛的个人博客</h1>
+      <p class="site-title">黄江涛的个人博客</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -90,7 +94,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           المحتويات
@@ -103,6 +107,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">v-once指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-cloak%E6%8C%87%E4%BB%A4%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">v-cloak指令作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-text%E6%8C%87%E4%BB%A4%E5%92%8Cv-html%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">v-text指令和v-html指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if%E6%8C%87%E4%BB%A4"><span class="nav-number">1.4.</span> <span class="nav-text">v-if指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-else%E6%8C%87%E4%BB%A4"><span class="nav-number">1.5.</span> <span class="nav-text">v-else指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-else-if%E6%8C%87%E4%BB%A4"><span class="nav-number">1.6.</span> <span class="nav-text">v-else-if指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show%E6%8C%87%E4%BB%A4"><span class="nav-number">1.7.</span> <span class="nav-text">v-show指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for%E6%8C%87%E4%BB%A4"><span class="nav-number">1.8.</span> <span class="nav-text">v-for指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind%E6%8C%87%E4%BB%A4"><span class="nav-number">1.9.</span> <span class="nav-text">v-bind指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-on%E6%8C%87%E4%BB%A4"><span class="nav-number">1.10.</span> <span class="nav-text">v-on指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E6%8C%87%E4%BB%A4"><span class="nav-number">1.11.</span> <span class="nav-text">自定义全局指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="nav-number">1.12.</span> <span class="nav-text">自定义指令参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%80%E9%83%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">1.13.</span> <span class="nav-text">自定义局部指令</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -144,16 +149,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/18/Vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -166,9 +172,9 @@
       <meta itemprop="name" content="黄江涛的个人博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/18/Vue%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">Vue</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Vue
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -192,7 +198,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>什么是指令?<br>指令就是Vue内部提供的一些自定义属性,<br>这些属性中封装好了Vue内部实现的一些功能<br>只要使用这些指令就可以使用Vue中实现的这些功能</p>
+        <h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>什么是指令?<br>指令就是Vue内部提供的一些自定义属性,<br>这些属性中封装好了Vue内部实现的一些功能<br>只要使用这些指令就可以使用Vue中实现的这些功能</p>
 <h3 id="v-once指令"><a href="#v-once指令" class="headerlink" title="v-once指令"></a>v-once指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">让界面不要跟着数据变化, 只渲染一次</span><br></pre></td></tr></table></figure>
 <h3 id="v-cloak指令作用"><a href="#v-cloak指令作用" class="headerlink" title="v-cloak指令作用"></a>v-cloak指令作用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">数据渲染之后自动显示元素</span><br><span class="line"></span><br><span class="line">1.Vue数据绑定过程</span><br><span class="line">1.1会先将未绑定数据的界面展示给用户</span><br><span class="line">1.2然后再根据模型中的数据和控制的区域生成绑定数据之后的HTML代码</span><br><span class="line">1.3最后再将绑定数据之后的HTML渲染到界面上</span><br><span class="line"></span><br><span class="line">正是在最终的HTML被生成渲染之前会先显示模板内容</span><br><span class="line">所以如果用户网络比较慢或者网页性能比较差, 那么用户会看到模板内容</span><br><span class="line"></span><br><span class="line">2.如何解决这个问题</span><br><span class="line">利用v-cloak配合 [v-cloak]:&#123;display: none&#125; 默认先隐藏未渲染的界面</span><br><span class="line">等到生成HTML渲染之后再重新显示</span><br></pre></td></tr></table></figure>
 
@@ -229,7 +235,6 @@
 <h3 id="自定义指令参数"><a href="#自定义指令参数" class="headerlink" title="自定义指令参数"></a>自定义指令参数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1.自定义指令参数</span><br><span class="line">在使用官方指令的时候我们可以给指令传参</span><br><span class="line">例如: v-model=&quot;name&quot;</span><br><span class="line">在我们自定义的指令中我们也可以传递传递</span><br><span class="line"></span><br><span class="line">2.获取自定义指令传递的参数</span><br><span class="line">在执行自定义指令对应的方法的时候, 除了会传递el给我们, 还会传递一个对象给我们</span><br><span class="line">这个对象中就保存了指令传递过来的参数</span><br><span class="line"></span><br><span class="line">&lt;p v-color=&quot; &#x27; blue &#x27; &quot;&gt;</span><br><span class="line"></span><br><span class="line">Vue.directive(&quot;color&quot;,&#123;</span><br><span class="line">	bind: function(el,obj)&#123;</span><br><span class="line">		el.style.color = obj.value	//obj中保存了传递进来的参数</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">也可以把数据放在data中传递</span><br><span class="line">data:&#123;</span><br><span class="line">	curColor:&#x27;blue&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;p v-color=&quot; curColor &quot;&gt;</span><br><span class="line"></span><br><span class="line">Vue.directive(&quot;color&quot;,&#123;</span><br><span class="line">	bind: function(el,obj)&#123;</span><br><span class="line">		el.style.color = obj.value	//obj中保存了传递进来的参数</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h3 id="自定义局部指令"><a href="#自定义局部指令" class="headerlink" title="自定义局部指令"></a>自定义局部指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1.自定义全局指令的特点</span><br><span class="line">在任何一个Vue实例控制的区域中都可以使用</span><br><span class="line"></span><br><span class="line">2.自定义局部指令的特点</span><br><span class="line">只能在自定义的那个Vue实例中使用</span><br><span class="line"></span><br><span class="line">3.如何自定义一个局部指令</span><br><span class="line">给创建Vue实例时传递的对象添加</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let vue = new Vue(&#123;</span><br><span class="line">	el:&quot;#app&quot;</span><br><span class="line">	data:&#123;&#125;</span><br><span class="line">	methods:&#123;&#125;</span><br><span class="line">	//专门用于定义局部指令的</span><br><span class="line">	directives: &#123;</span><br><span class="line">    	// key: 指令名称</span><br><span class="line">   	 // value: 对象</span><br><span class="line">    		&#x27;color&#x27;: &#123;</span><br><span class="line">        		bind: function (el, obj) &#123;</span><br><span class="line">           	 		el.style.color = obj.value;</span><br><span class="line">       			 &#125;</span><br><span class="line">   		 &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
@@ -237,87 +242,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/27/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="黄江涛">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="黄江涛的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: 2021-12-27 03:00:05" itemprop="dateCreated datePublished" datetime="2021-12-27T03:00:05+08:00">2021-12-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
